@@ -3,3 +3,4 @@ uvicorn[standard]
 google-cloud-aiplatform
 google-cloud-storage
 google-cloud-bigquery
+lxml
