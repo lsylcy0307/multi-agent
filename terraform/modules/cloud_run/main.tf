@@ -38,6 +38,33 @@ resource "google_cloud_run_v2_service" "api" {
         name  = "GCP_REGION"
         value = var.region
       }
+
+      env {
+        name = "PINECONE_INDEX_NAME"
+        value = "nonprofit-irs-990"
+      }
+
+      env {
+        name = "PINECONE_API_KEY"
+
+        value_source {
+          secret_key_ref {
+            secret  = "PINECONE_API_KEY"
+            version = "latest"
+          }
+        }
+      }
+
+      env {
+        name = "ANTHROPIC_API_KEY"
+
+        value_source {
+          secret_key_ref {
+            secret  = "ANTHROPIC_API_KEY"
+            version = "latest"
+          }
+        }
+      }
     }
   }
 }

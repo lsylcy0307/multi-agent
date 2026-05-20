@@ -20,7 +20,8 @@ resource "google_project_service" "services" {
     "aiplatform.googleapis.com",
     "storage.googleapis.com",
     "bigquery.googleapis.com",
-    "iam.googleapis.com"
+    "iam.googleapis.com",
+    "secretmanager.googleapis.com"
   ])
 
   project            = var.project_id
